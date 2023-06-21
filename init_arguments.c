@@ -22,4 +22,5 @@ void init_arguments(void)
 	arguments->stream = NULL;
 	arguments->line = NULL;
 	arguments->line_read = 0;
+	arguments->tokens_size = 0;
 }

@@ -25,6 +25,10 @@ int main(int argc, char **argv)
 	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
 	{
 		arguments->line_read += 1;
+		// tokenize line -- get words only
+		// get instructios -- get the opcode from the tokens array.. this is after tokenization
+		// run instruction - run the function associated with the opcode
+		// uhmm idk what to do here yet 😕
 		printf("%s", arguments->line);
 	}
 	printf("\n");

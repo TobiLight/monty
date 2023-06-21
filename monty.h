@@ -53,6 +53,9 @@ typedef struct arg_s
 	FILE *stream;
 	char *line;
         unsigned int line_read;
+        int tokens_size;
+        char **tokens;
+        instruction_t *instruction;
 } arg_t;
 /* Global variables and functions */
 extern arg_t *arguments;
