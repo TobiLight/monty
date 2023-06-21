@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
 	{
 		arguments->line_read += 1;
-		tokenizer(arguments->line, "\n");
+		tokenizer(arguments->line, " \n\t\r");
 		printf("%s", arguments->line);
 	}
 	printf("\n");
