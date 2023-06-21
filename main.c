@@ -33,9 +33,8 @@ int main(int argc, char **argv)
 
 	if (arguments->stream == NULL)
 	{
-		close(fd);
-		free(arguments);
 		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
+		free(arguments);
 		exit(EXIT_FAILURE);
 	}
 	while (getline(&arguments->line, &n, arguments->stream) != -1)
