@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	}
 	/* Get stream */
 	arguments->line = argv[1];
-	arguments->stream = fopen(argv[1], O_RDONLY);
+	arguments->stream = fopen(argv[1], "r");
 
 	if (arguments->stream == NULL)
 	{
