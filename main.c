@@ -16,14 +16,12 @@
 
 int main(int argc, char **argv)
 {
-	char** lines = NULL;
-    char* line = NULL;
-    size_t bufsize = 0;
-    ssize_t linelen;
-    int count = 0;
+	size_t n = 0;
+	ssize_t linelen;
 
 	validate_args(argc);
 	arguments = malloc(sizeof(arg_t));
+	
 	if (arguments == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -38,7 +36,7 @@ int main(int argc, char **argv)
 		free(arguments);
 		exit(EXIT_FAILURE);
 	}
-	linelen = getline(&line, &bufsize, arguments->stream);
+	linelen = getline(&arguments->line, &n, arguments->stream);
 	while (linelen != -1)
 	{
 		printf("%s\n", arguments->line);
