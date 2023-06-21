@@ -37,10 +37,9 @@ int main(int argc, char **argv)
 		free(arguments);
 		exit(EXIT_FAILURE);
 	}
-	linelen = getline(&arguments->line, &n, arguments->stream);
-	while (linelen != -1)
+	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
 	{
-		printf("%s\n", arguments->line);
+		printf("%s", arguments->line);
 	}
 	return (0);
 }
