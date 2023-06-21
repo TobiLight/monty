@@ -12,13 +12,28 @@
  * Return: nothing
  */
 
-void get_stream(char **line)
+void get_stream(char *file)
 {
-	arguments->line = line[1];
-	arguments->stream = fopen(line[1], "r");
+	int fd;
+
+	fd = open(file, O_RDONLY);
+	if (fd == -1)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
+		if (arguments == NULL)
+			return;
+		if (arguments->line)
+		{
+			free(arguments->line);
+			arguments->line = NULL;
+		}
+		free(arguments);
+		exit(EXIT_FAILURE);
+	}
+	arguments->stream = fdopen(fd, "r");
 	if (arguments->stream == NULL)
 	{
-		fclose(arguments->line);
+		close(fd);
 		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
 		if (arguments == NULL)
 			return;
