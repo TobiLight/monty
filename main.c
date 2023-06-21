@@ -1,45 +1,50 @@
-/*
- * File: main.c
- * Author: Oluwatobiloba Light
- */
+#include <stdio.h>
+#include <stdlib.h>
 
-#include "monty.h"
+char** readLinesFromFile(FILE* file, int* numLines) {
+    char** lines = NULL;
+    char* line = NULL;
+    size_t bufsize = 0;
+    ssize_t linelen;
+    int count = 0;
 
-/**
- * main - Entry point monty program
- * @argc: Number of command line arguments
- * @argv: Pointer to array of strings containing
- *        the command line arguments
- *
- * Return: Always (0) Success
- */
+    while ((linelen = getline(&line, &bufsize, file)) != -1) {
+        lines = realloc(lines, (count + 1) * sizeof(char*));
+        lines[count] = malloc((linelen + 1) * sizeof(char));
+        if (lines[count] == NULL) {
+            perror("Memory allocation error");
+            exit(1);
+        }
 
-int main(int argc, char **argv)
-{
-	size_t n = 0;
-	ssize_t linelen;
+        line[linelen] = '\0';  // Null-terminate the line
+        strcpy(lines[count], line);
 
-	validate_args(argc);
-	arguments = malloc(sizeof(arg_t));
-	
-	if (arguments == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-	arguments->line = argv[1];
-	arguments->stream = fopen(argv[1], "r");
+        count++;
+    }
 
-	if (arguments->stream == NULL)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
-		free(arguments);
-		exit(EXIT_FAILURE);
-	}
-	linelen = getline(&arguments->line, &n, arguments->stream);
-	while (linelen != -1)
-	{
-		printf("%s\n", arguments->line);
-	}
-	return (0);
+    free(line);
+    *numLines = count;
+
+    return lines;
+}
+
+int main() {
+    FILE* file = fopen("example.txt", "r");
+	char **lines;
+	int i, numLines;
+
+    if (file == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+    lines = readLinesFromFile(file, &numLines);
+    fclose(file);
+    for (i = 0; i < numLines; i++) {
+        printf("Line %d: %s\n", i + 1, lines[i]);
+        free(lines[i]);
+    }
+
+    free(lines);
+
+    return 0;
 }
