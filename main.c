@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 
 	validate_args(argc);
 	init_arguments();
-	get_stream(argv);
+	get_stream(argv[1]);
 	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
 	{
 		arguments->line_read += 1;
