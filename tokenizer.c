@@ -24,6 +24,7 @@ void tokenizer(void)
 		exit(EXIT_FAILURE);
 	}
 	strcpy(line_cpy, arguments->line);
+	arguments->tokens_size = 0;
 	token = strtok(line_cpy, delim);
 	while (token)
 	{
