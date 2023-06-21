@@ -24,6 +24,7 @@ void tokenizer(void)
 		exit(EXIT_FAILURE);
 	}
 	strcpy(line_cpy, arguments->line);
+	arguments->tokens_size = 0;
 	token = strtok(line_cpy, delim);
 	while (token)
 	{
@@ -46,7 +47,7 @@ void tokenizer(void)
 		n++;
 	}
 	printf("Token sizee: %d\n", n);
-	printf("Tok: %s\n", *(arguments)->tokens[0]);
+	printf("Tok: %s\n", *(arguments)->tokens);
 
 	arguments->tokens[n] = NULL;
 	free(line_cpy);
