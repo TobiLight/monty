@@ -30,9 +30,6 @@ int main(int argc, char **argv)
 		tokenizer();
 		printf("%s", arguments->line);
 	}
-	printf("\n");
-	printf("Token size: %d\n", arguments->tokens_size);
-	printf("Tokens: %s\n", arguments->tokens[1]);
 	for (i = 0; i < arguments->tokens_size; i++)
 		printf("Token %s\n", arguments->tokens[i]);
 	return (0);
