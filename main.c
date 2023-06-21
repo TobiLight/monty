@@ -32,6 +32,6 @@ int main(int argc, char **argv)
 	printf("\n");
 	printf("%d", arguments->tokens_size);
 	for (i = 0; i < arguments->tokens_size; i++)
-		printf("%s\n", *(arguments)->tokens[i]);
+		printf("hi");
 	return (0);
 }
