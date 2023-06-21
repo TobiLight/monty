@@ -11,7 +11,7 @@
  * Return: nothing
  */
 
-void init_arguments()
+void init_arguments(void)
 {
 	arguments = malloc(sizeof(arg_t));
 	if (arguments == NULL)
