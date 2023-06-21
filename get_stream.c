@@ -4,6 +4,7 @@
  */
 
 #include <unistd.h>
+#include <stdio.h>
 #include "monty.h"
 
 /**
