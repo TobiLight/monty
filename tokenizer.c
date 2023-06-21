@@ -7,7 +7,7 @@
 
 /**
  * tokenizer - Tokenizes the line read from a file
- * 
+ *
  * Return: nothing
  */
 
@@ -25,7 +25,6 @@ void tokenizer(void)
 	}
 	strcpy(line_cpy, arguments->line);
 	token = strtok(line_cpy, delim);
-
 	while (token)
 	{
 		arguments->tokens_size += 1;
