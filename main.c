@@ -23,7 +23,8 @@ int main(int argc, char **argv)
 	// Initialize arguments here
 	init_arguments();
 	// get stream
-	get_stream(argv[1]);
+	get_stream(argv);
+
 	// print result
 	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
 		printf("%s", arguments->line);
