@@ -1,6 +1,5 @@
 #ifndef MONTY_H
 #define MONTY_H
-#define _GNU_SOURCE
 /*
  * File: monty.h
  * Author: Oluwatobiloba Light
@@ -60,6 +59,9 @@ typedef struct arg_s
 } arg_t;
 /* Global variables and functions */
 extern arg_t *arguments;
+
+FILE *fdopen(int fd, const char *mode);
+ssize_t getline(char **lineptr, size_t *n, FILE*stream);
 
 void validate_args(int);
 void init_arguments();
