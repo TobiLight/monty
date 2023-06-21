@@ -19,6 +19,7 @@ int main(int argc, char **argv)
 {
 	size_t n = 0;
 	ssize_t linelen;
+	int i;
 
 	validate_args(argc);
 	init_arguments();
@@ -27,12 +28,10 @@ int main(int argc, char **argv)
 	{
 		arguments->line_read += 1;
 		tokenizer();
+		for (i = 0; i < arguments->tokens_size; i++)
+			printf("Token %s\n", arguments->tokens[i]);
 		printf("%s", arguments->line);
 	}
-	while (arguments->tokens)
-	{
-		printf("%s", *(arguments)->tokens);
-		*(arguments)->tokens++;
-	}
+
 	return (0);
 }
