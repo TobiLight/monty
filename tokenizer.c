@@ -32,7 +32,7 @@ void tokenizer(char *line, const char *delim)
 		arguments->tokens_size += 1;
 		token = strtok(NULL, delim);
 	}
-	arguments->tokens = malloc(sizeof(char *) * (arguments->line_read + 1));
+	arguments->tokens = malloc(sizeof(char *) * (arguments->tokens_size + 1));
 	strcpy(line_cpy, line);
 	token = strtok(line_cpy, delim);
 	while (token)
