@@ -14,7 +14,7 @@
 void tokenizer(void)
 {
 	int n = 0;
-	const char *delim = " \n\t\r";
+	const char *delim = " \n";
 	char *line_cpy = NULL, *token = NULL;
 
 	line_cpy = malloc(sizeof(char) * (strlen(arguments->line) + 1));
