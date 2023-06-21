@@ -21,4 +21,5 @@ void init_arguments()
 	}
 	arguments->stream = NULL;
 	arguments->line = NULL;
+	arguments->line_read = 0;
 }

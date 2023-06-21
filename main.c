@@ -23,6 +23,10 @@ int main(int argc, char **argv)
 	init_arguments();
 	get_stream(argv);
 	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
-		printf("%s", arguments->line);
+	{
+			printf("%s", arguments->line);
+	}
+	printf("\n");
+	printf("Number of lines read: %d\n", arguments->line_read);
 	return (0);
 }
