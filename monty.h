@@ -60,7 +60,6 @@ typedef struct arg_s
 } arg_t;
 /* Global variables and functions */
 extern arg_t *arguments;
-arg_t *arguments;
 
 void validate_args(int);
 void init_arguments();
