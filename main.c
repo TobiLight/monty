@@ -31,7 +31,10 @@ int main(int argc, char **argv)
 		printf("%s", arguments->line);
 	}
 	printf("%c", arguments->tokens);
-	for (i = 0; i < arguments->tokens_size; i++)
-		printf("Token %s\n", arguments->tokens[i]);
+	while (arguments->tokens)
+	{
+		printf("%s", *(arguments)->tokens);
+		arguments->tokens++;
+	}
 	return (0);
 }
