@@ -12,7 +12,7 @@
  * Return: nothing
  */
 
-void get_stream(char *line)
+void get_stream(char **line)
 {
     arguments->line = line[1];
     arguments->stream = fopen(line[1], "r");
