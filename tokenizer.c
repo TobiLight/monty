@@ -47,7 +47,7 @@ void tokenizer(void)
 		n++;
 	}
 	printf("Token sizee: %d\n", n);
-	printf("Tok: %s\n", arguments->tokens[1]);
+	printf("Tok: %s\n", arguments->tokens[2]);
 
 	arguments->tokens[n] = NULL;
 	free(line_cpy);
