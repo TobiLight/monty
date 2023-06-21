@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 	validate_args(argc);
 	/* Initialize arguments */
 	arguments = malloc(sizeof(arg_t));
+	
 	if (arguments == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -38,7 +39,8 @@ int main(int argc, char **argv)
 		free(arguments);
 		exit(EXIT_FAILURE);
 	}
-	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
+	linelen = getline(&arguments->line, &n, arguments->stream);
+	while (linelen != -1)
 	{
 		printf("%s\n", arguments->line);
 	}
