@@ -1,7 +1,7 @@
 /*
  * File: main.c
  * Author: Oluwatobiloba Light
-*/
+ */
 
 #include "monty.h"
 
@@ -12,11 +12,10 @@
  *        the command line arguments
  *
  * Return: Always (0) Success
-*/
+ */
 
 int main(int argc, char **argv)
 {
-	int fd;
 	size_t n = 0;
 
 	/* Validate args */
@@ -26,27 +25,22 @@ int main(int argc, char **argv)
 	if (arguments == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);		
-	}
-	/* Get stream */
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		free(arguments);
 		exit(EXIT_FAILURE);
 	}
-	arguments->stream = fdopen(fd, "r");
+	/* Get stream */
+	arguments->line = argv[1];
+	arguments->stream = fopen(argv[1], O_RDONLY);
+
 	if (arguments->stream == NULL)
 	{
 		close(fd);
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		free(arguments);
+		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
+		exit(EXIT_FAILURE);
 	}
 	while (getline(&arguments->line, &n, arguments->stream) != -1)
 	{
 		printf("%s\n", arguments->line);
-	}
-	}
 	}
 	return (0);
 }
