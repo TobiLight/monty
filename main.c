@@ -17,6 +17,7 @@
 int main(int argc, char **argv)
 {
 	size_t n = 0;
+	ssize_t linelen;
 
 	/* Validate args */
 	validate_args(argc);
@@ -37,7 +38,7 @@ int main(int argc, char **argv)
 		free(arguments);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&arguments->line, &n, arguments->stream) != -1)
+	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
 	{
 		printf("%s\n", arguments->line);
 	}
