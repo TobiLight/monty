@@ -26,12 +26,11 @@ int main(int argc, char **argv)
 	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
 	{
 		arguments->line_read += 1;
-		tokenizer(arguments->line, " ");
+		tokenizer(arguments->line, "\n");
 		printf("%s", arguments->line);
 	}
 	printf("\n");
-	printf("%d", arguments->tokens_size);
 	for (i = 0; i < arguments->tokens_size; i++)
-		printf("hi");
+		printf("%s\n", *(arguments)->tokens[i]);
 	return (0);
 }
