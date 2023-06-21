@@ -64,5 +64,6 @@ arg_t *arguments;
 void validate_args(int);
 void init_arguments();
 void get_stream(char **);
+void tokenizer(char *, const char *);
 
 #endif /* MONTY_H */
