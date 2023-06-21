@@ -28,7 +28,8 @@ void tokenizer(void)
 	token = strtok(line_cpy, delim);
 	while (token)
 	{
-		printf("%s\n", token);
+		printf("Tokens: %s\n", token);
+		printf("Token size: %d\n", arguments->tokens_size);
 		arguments->tokens_size += 1;
 		token = strtok(NULL, delim);
 	}
