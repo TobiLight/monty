@@ -20,9 +20,7 @@ int main(int argc, char **argv)
 	ssize_t linelen;
 
 	validate_args(argc);
-	/* Initialize arguments */
 	arguments = malloc(sizeof(arg_t));
-	
 	if (arguments == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -30,7 +28,6 @@ int main(int argc, char **argv)
 	}
 	arguments->line = argv[1];
 	arguments->stream = fopen(argv[1], "r");
-
 	if (arguments->stream == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
@@ -38,8 +35,6 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
-	{
 		printf("%s", arguments->line);
-	}
 	return (0);
 }
