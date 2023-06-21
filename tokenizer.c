@@ -7,24 +7,23 @@
 
 /**
  * tokenizer - Tokenizes the line read from a file
- * @line: Pointer to the string to be parsed
- * @delim: Pointer to bytes that delimits tokens in the parsed string
- *
+ * 
  * Return: nothing
  */
 
-void tokenizer(char *line, const char *delim)
+void tokenizer(void)
 {
 	int n = 0;
+	const char *delim = " \n\t\r";
 	char *line_cpy = NULL, *token = NULL;
 
-	line_cpy = malloc(sizeof(char) * (strlen(line) + 1));
+	line_cpy = malloc(sizeof(char) * (strlen(arguments->line) + 1));
 	if (line_cpy == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	strcpy(line_cpy, line);
+	strcpy(line_cpy, arguments->line);
 	token = strtok(line_cpy, delim);
 
 	while (token)
@@ -33,7 +32,7 @@ void tokenizer(char *line, const char *delim)
 		token = strtok(NULL, delim);
 	}
 	arguments->tokens = malloc(sizeof(char *) * (arguments->tokens_size + 1));
-	strcpy(line_cpy, line);
+	strcpy(line_cpy, arguments->line);
 	token = strtok(line_cpy, delim);
 	while (token)
 	{
