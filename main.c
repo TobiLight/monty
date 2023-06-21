@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	while (arguments->tokens)
 	{
 		printf("%s", *(arguments)->tokens);
-		arguments->tokens++;
+		*(arguments)->tokens++;
 	}
 	return (0);
 }
