@@ -54,7 +54,7 @@ typedef struct arg_s
 } arg_t;
 /* Global variables and functions */
 extern arg_t *arguments;
-extern 
+arg_t *arguments;
 void validate_args(int);
 
 #endif /* MONTY_H */
