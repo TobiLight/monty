@@ -51,8 +51,8 @@ typedef struct instruction_s
 */
 typedef struct arg_s
 {
-	FILE *stream;
 	char *line;
+	FILE *stream;
         unsigned int line_read;
         int tokens_size;
         char **tokens;
