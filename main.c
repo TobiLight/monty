@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	}
 
 	if (arguments->stream == NULL)
-		return;
+		return (0);
 
 	fclose(arguments->stream);
 	arguments->stream = NULL;
