@@ -49,6 +49,13 @@ typedef struct instruction_s
  * struct args_s - Handle file stream
  * @stream: File that connects to the stream from file
  * @line: Strings or line of text read from the file
+ * @line_read: for tracking current line number
+ * @tokens: used to store tokens from line
+ * @instruction: a valid instruction from a line
+ * @tokens_size: number of tokens created from line
+ * @head: head/top of the stack (doubly linked lists of struct stack_s)
+ * @stack_size: tracks the number of nodes in the stack
+ * @stack: used to determine whether to use stack/queue data structure
 */
 typedef struct arg_s
 {
@@ -74,13 +81,13 @@ void init_arguments();
 void get_stream(char *);
 void tokenizer();
 void parse_instruction();
-void free_node_stack(stack_t *)
-void free_arguments()
-void free_tokens(void)
-void close_stream(void)
+void free_node_stack(stack_t *);
+void free_arguments();
+void free_tokens(void);
+void close_stream(void);
 
 
-void push(stack_t **, unsigned int)
+void push(stack_t **, unsigned int);
 
 
 #endif /* MONTY_H */
