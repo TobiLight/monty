@@ -18,7 +18,6 @@ int main(int argc, char **argv)
 {
 	size_t n = 0;
 	ssize_t linelen;
-	int i;
 
 	validate_args(argc);
 	init_arguments();
