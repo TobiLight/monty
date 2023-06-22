@@ -84,6 +84,7 @@ void parse_instruction();
 void run_instruction();
 void free_node_stack(stack_t *);
 
+/* Helper functions */
 void free_arguments();
 void free_tokens();
 void close_stream();
