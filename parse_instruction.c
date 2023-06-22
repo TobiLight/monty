@@ -17,8 +17,7 @@ void parse_instruction(void)
 	instruction_t *instruction[] = {
 		{"push", &push},
 		{"pall", &pall},
-		{NULL, NULL}
-	};
+		{NULL, NULL}};
 
 	if (arguments->tokens_size <= 0)
 		return;

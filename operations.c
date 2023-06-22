@@ -52,7 +52,6 @@ void push(stack_t **stack, unsigned int line_number)
 	arguments->stack_size += 1;
 }
 
-
 /**
  * pall - Prints all the elements in the stack.
  * @stack: Pointer to the stack.
@@ -61,12 +60,12 @@ void push(stack_t **stack, unsigned int line_number)
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-	(void) line_number;
-	(void) stack;
+	(void)line_number;
+	(void)stack;
 
 	if (arguments->head == NULL)
 		return;
-	
+
 	temp = arguments->head;
 	while (temp != NULL)
 	{
