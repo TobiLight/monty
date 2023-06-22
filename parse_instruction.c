@@ -15,8 +15,10 @@ void parse_instruction(void)
 {
 	int i;
 	instruction_t *instruction[] = {
-		{"push", push},
-		{NULL, NULL}};
+		{"push", &push},
+		{"pall", &pall},
+		{NULL, NULL}
+	};
 
 	if (arguments->tokens_size <= 0)
 		return;
@@ -28,8 +30,7 @@ void parse_instruction(void)
 	}
 	for (i = 0; instructions[i].opcode != NULL; i++)
 	{
-		if (strcmp(instructions[i].opcode, arguments->tokens[0])
-				== 0)
+		if (strcmp(instructions[i].opcode, arguments->tokens[0]) == 0)
 		{
 			arguments->instruction->opcode = instructions[i].opcode;
 			arguments->instruction->f = instructions[i].f;

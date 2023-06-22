@@ -41,13 +41,36 @@ void push(stack_t **stack, unsigned int line_number)
 		}
 		else
 		{
-			stack_t *tmp = arguments->head;
+			stack_t *temp = arguments->head;
 
-			while (tmp->next)
-				tmp = tmp->next;
-			tmp->next = *stack;
-			(*stack)->prev = tmp;
+			while (temp->next)
+				temp = temp->next;
+			temp->next = *stack;
+			(*stack)->prev = temp;
 		}
 	}
 	arguments->stack_size += 1;
+}
+
+
+/**
+ * pall - Prints all the elements in the stack.
+ * @stack: Pointer to the stack.
+ * @line_number: Line number where the pall function is called.
+ */
+void pall(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+	(void) line_number;
+	(void) stack;
+
+	if (arguments->head == NULL)
+		return;
+	
+	temp = arguments->head;
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+	}
 }

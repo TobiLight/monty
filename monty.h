@@ -88,6 +88,7 @@ void close_stream(void);
 
 
 void push(stack_t **, unsigned int);
+void pall(stack_t **, unsigned int);
 
 
 #endif /* MONTY_H */
