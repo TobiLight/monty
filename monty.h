@@ -89,6 +89,7 @@ int is_int(char *);
 
 void push(stack_t **, unsigned int);
 void pall(stack_t **, unsigned int);
-void nop(stack_t **, unsigned int)
+void nop(stack_t **, unsigned int);
+
 
 #endif /* MONTY_H */
