@@ -19,7 +19,7 @@ void close_stream(void)
 
 
 /**
-* free_stack - Free the nodes in a stack
+* free_node_stack - Free the nodes in a stack
 * @head: first node of a stack_t list
 * Return: void
 */
