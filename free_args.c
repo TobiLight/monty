@@ -1,7 +1,8 @@
 /*
  * File: free_args.c
  * Author: Oluwatobiloba Light
- */
+*/
+
 
 #include "monty.h"
 
@@ -17,12 +18,11 @@ void close_stream(void)
 	arguments->stream = NULL;
 }
 
-
 /**
-* free_node_stack - Free the nodes in a stack
-* @head: first node of a stack_t list
-* Return: void
-*/
+ * free_node_stack - Free the nodes in a stack
+ * @head: first node of a stack_t list
+ * Return: void
+ */
 void free_node_stack(stack_t *head)
 {
 	if (head == NULL)
@@ -56,28 +56,28 @@ void free_tokens(void)
 
 /**
  * free_arguments - free memory allocated to arguments pointer
-*/
+ */
 void free_arguments(void)
 {
-    if (arguments == NULL)
-        return;
+	if (arguments == NULL)
+		return;
 
-    if (arguments->instruction)
-    {
-        free(arguments->instruction);
-        arguments->instruction = NULL;
-    }
+	if (arguments->instruction)
+	{
+		free(arguments->instruction);
+		arguments->instruction = NULL;
+	}
 
-    if (arguments->head)
-        free_node_stack(arguments->head);
+	if (arguments->head)
+		free_node_stack(arguments->head);
 
-    arguments->head = NULL;
+	arguments->head = NULL;
 
-    if (arguments->line)
-    {
-        free(arguments->line);
-        arguments->line = NULL;
-    }
+	if (arguments->line)
+	{
+		free(arguments->line);
+		arguments->line = NULL;
+	}
 
-    free(arguments);
+	free(arguments);
 }
