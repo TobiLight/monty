@@ -48,9 +48,6 @@ void parse_instruction(void)
 	free_arguments();
 }
 
-
-#include "monty.h"
-
 /**
  * run_instruction - Runs the instruction specified by the arguments.
  */
