@@ -1,14 +1,14 @@
 /*
  * File: is_int.c
  * Author: Oluwatobiloba Light
-*/
+ */
 
 #include "monty.h"
 
 /**
  * is_int - Checks if a string represents a valid integer number.
  * @str: The string to check.
- * 
+ *
  * Return: 1 if the string is a valid number, 0 otherwise.
  */
 int is_int(char *str)
