@@ -7,7 +7,7 @@
 
 /**
  * get_stream - Read lines from a file.
- * @line: Line read from file.
+ * @file: File to be read.
  *
  * Return: nothing
  */
