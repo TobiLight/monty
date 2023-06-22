@@ -60,5 +60,5 @@ void run_instruction(void)
 
 	if (arguments->tokens_size == 0)
 		return;
-	arguments->instruction->f(&stack, arguments->line_number);
+	arguments->instruction->f(&stack, arguments->line_read);
 }
