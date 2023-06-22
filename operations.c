@@ -13,7 +13,7 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	if (arguments->tokens_size <= 1 || !(is_number(arguments->tokens[1])))
+	if (arguments->tokens_size <= 1 || !(is_int(arguments->tokens[1])))
 	{
 		free_arguments();
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
