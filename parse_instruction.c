@@ -5,7 +5,6 @@
 
 #include "monty.h"
 
-
 /**
  * parse_instruction - Sets and executes the instruction based on
  *                     the tokens
@@ -15,12 +14,12 @@
 void parse_instruction(void)
 {
 	int i;
-	
+
 	instruction_t *instruction[] = {
-		{"push", &push},
-		{"pall", &pall},
+		{"push", &push}, {"pall", &pall},
 		{NULL, NULL}
 	};
+
 
 	if (arguments->tokens_size <= 0)
 		return;
