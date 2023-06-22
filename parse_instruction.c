@@ -21,6 +21,4 @@ void parse_instruction(void)
 
 	if (arguments->tokens_size <= 0)
 		return;
-
-	// my head is paining me -_-
 }
