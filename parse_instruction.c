@@ -33,7 +33,7 @@ void parse_instruction(void)
 		if (strcmp(instruction[i]->opcode, arguments->tokens[0]) == 0)
 		{
 			arguments->instruction->opcode = instruction[i]->opcode;
-			arguments->instruction->f = instruction[i].f;
+			arguments->instruction->f = instruction[i]->f;
 			return;
 		}
 	}

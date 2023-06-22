@@ -4,7 +4,7 @@
 /*
  * File: monty.h
  * Author: Oluwatobiloba Light
-*/
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -56,25 +56,25 @@ typedef struct instruction_s
  * @head: head/top of the stack (doubly linked lists of struct stack_s)
  * @stack_size: tracks the number of nodes in the stack
  * @stack: used to determine whether to use stack/queue data structure
-*/
+ */
 typedef struct arg_s
 {
-	char *line;
-	FILE *stream;
+        char *line;
+        FILE *stream;
         unsigned int line_read;
         int tokens_size;
         char **tokens;
         instruction_t *instruction;
         stack_t *head;
         int stack_size;
-	int stack;
+        int stack;
 } arg_t;
 
 /* Global variables and functions */
 extern arg_t *arguments;
 
 FILE *fdopen(int fd, const char *mode);
-ssize_t getline(char **lineptr, size_t *n, FILE*stream);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
 void validate_args(int);
 void init_arguments();
@@ -87,9 +87,8 @@ void free_tokens(void);
 void close_stream(void);
 int is_int(char *);
 
-
 void push(stack_t **, unsigned int);
 void pall(stack_t **, unsigned int);
-
+void nop(stack_t **, unsigned int)
 
 #endif /* MONTY_H */
