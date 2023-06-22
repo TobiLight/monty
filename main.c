@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	{
 		arguments->line_read += 1;
 		tokenizer();
-
+		parse_instruction();
 		printf("%s", arguments->line);
 	}
 
