@@ -4,6 +4,7 @@
  */
 
 #include "monty.h"
+arg_t *arguments = NULL;
 
 /**
  * main - Entry point monty program
@@ -27,8 +28,16 @@ int main(int argc, char **argv)
 		arguments->line_read += 1;
 		tokenizer();
 		parse_instruction();
-		printf("%s", arguments->line);
+		run_instruction();
+		free_tokens();
 	}
+
+	if (arguments->stream == NULL)
+		return;
+
+	fclose(arguments->stream);
+	arguments->stream = NULL;
+	free_arguments();
 
 	return (0);
 }
