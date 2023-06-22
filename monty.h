@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+
 /*
  * File: monty.h
  * Author: Oluwatobiloba Light
@@ -12,6 +13,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <stddef.h>
+#include <unistd.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -57,6 +59,7 @@ typedef struct arg_s
         char **tokens;
         instruction_t *instruction;
 } arg_t;
+
 /* Global variables and functions */
 extern arg_t *arguments;
 
@@ -67,5 +70,6 @@ void validate_args(int);
 void init_arguments();
 void get_stream(char *);
 void tokenizer();
+void parse_instruction();
 
 #endif /* MONTY_H */

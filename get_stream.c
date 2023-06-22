@@ -3,8 +3,6 @@
  * Author: Oluwatobiloba Light
  */
 
-#include <stdio.h>
-#include <unistd.h>
 #include "monty.h"
 
 /**

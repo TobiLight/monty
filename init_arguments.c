@@ -19,6 +19,12 @@ void init_arguments(void)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
+	arguments->instruction = malloc(sizeof(instruction_t));
+	if (arguments->instruction == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	arguments->stream = NULL;
 	arguments->line = NULL;
 	arguments->line_read = 0;

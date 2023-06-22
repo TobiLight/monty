@@ -28,8 +28,7 @@ int main(int argc, char **argv)
 	{
 		arguments->line_read += 1;
 		tokenizer();
-		for (i = 0; i < arguments->tokens_size; i++)
-			printf("Token %s\n", arguments->tokens[i]);
+		
 		printf("%s", arguments->line);
 	}
 
