@@ -29,12 +29,12 @@ void parse_instruction(void)
 		arguments->instruction->f = nop;
 		return;
 	}
-	for (i = 0; instruction[i]->opcode != NULL; i++)
+	for (i = 0; instruction[i].opcode != NULL; i++)
 	{
-		if (strcmp(instruction[i]->opcode, arguments->tokens[0]) == 0)
+		if (strcmp(instruction[i].opcode, arguments->tokens[0]) == 0)
 		{
-			arguments->instruction->opcode = instruction[i]->opcode;
-			arguments->instruction->f = instruction[i]->f;
+			arguments->instruction->opcode = instruction[i].opcode;
+			arguments->instruction->f = instruction[i].f;
 			return;
 		}
 	}
