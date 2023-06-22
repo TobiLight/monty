@@ -14,8 +14,9 @@
 void parse_instruction(void)
 {
 	int i = 0;
-	instruction_t *instruction[] = {
-		{"push", &push}, {"pall", &pall},
+	instruction_t instruction[] = {
+		{"push", &push}, {"pall", &pop},
+		{"nop", &nop},
 		{NULL, NULL}
 	};
 
