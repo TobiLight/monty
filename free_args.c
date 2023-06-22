@@ -36,23 +36,6 @@ void free_node_stack(stack_t *head)
 	free(head);
 }
 
-/**
- * free_tokens - Frees the allocated memory for tokens.
- */
-void free_tokens(void)
-{
-	int i;
-
-	if (arguments->tokens == NULL)
-		return;
-
-	for (i = 0; arguments->tokens[i] != NULL; i++)
-	{
-		free(arguments->tokens[i]);
-	}
-	free(arguments->tokens);
-	arguments->tokens = NULL;
-}
 
 /**
  * free_arguments - free memory allocated to arguments pointer
