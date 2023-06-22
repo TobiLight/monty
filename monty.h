@@ -58,6 +58,9 @@ typedef struct arg_s
         int tokens_size;
         char **tokens;
         instruction_t *instruction;
+        stack_t *head;
+        int stack_size;
+	int stack;
 } arg_t;
 
 /* Global variables and functions */
@@ -71,5 +74,13 @@ void init_arguments();
 void get_stream(char *);
 void tokenizer();
 void parse_instruction();
+void free_node_stack(stack_t *)
+void free_arguments()
+void free_tokens(void)
+void close_stream(void)
+
+
+void push(stack_t **, unsigned int)
+
 
 #endif /* MONTY_H */
