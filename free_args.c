@@ -5,6 +5,7 @@
 
 
 #include "monty.h"
+arg_t *arguments;
 
 /**
  * close_stream - Closes the file stream and sets it to NULL.
