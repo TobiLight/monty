@@ -81,7 +81,7 @@ void init_arguments();
 void get_stream(char *);
 void tokenizer();
 void parse_instruction();
-void run_instruction()
+void run_instruction();
 void free_node_stack(stack_t *);
 
 void free_arguments();
