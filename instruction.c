@@ -20,6 +20,7 @@ void parse_instruction(void)
 		{"pop", &pop}, {"swap", &swap},
 		{"add", &add}, {"sub", &sub},
 		{"div", &_div}, {"mod", &mod},
+		{"mul", &mul},
 		{NULL, NULL}
 	};
 
