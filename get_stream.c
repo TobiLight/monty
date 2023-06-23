@@ -19,7 +19,7 @@ void get_stream(char *file)
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{
-		dprintf(2, "Error: Can't open file %s\n", arguments->line);
+		dprintf(2, "Error: Can't open file %s\n", file);
 		free_arguments();
 		exit(EXIT_FAILURE);
 	}
@@ -27,7 +27,7 @@ void get_stream(char *file)
 	if (arguments->stream == NULL)
 	{
 		close(fd);
-		dprintf(2, "Error: Can't open file %s\n", arguments->line);
+		dprintf(2, "Error: Can't open file %s\n", file);
 		free_arguments();
 		exit(EXIT_FAILURE);
 	}
