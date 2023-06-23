@@ -5,6 +5,7 @@
 
 #include "monty.h"
 
+arg_t *arguments = NULL;
 
 /**
  * main - Entry point monty program
