@@ -98,5 +98,6 @@ void pint(stack_t **, unsigned int);
 void pop(stack_t **, unsigned int);
 void delete_stack_node(void);
 void swap(stack_t **, unsigned int);
+void add(stack_t **, unsigned int );
 
 #endif /* MONTY_H */

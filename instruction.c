@@ -18,6 +18,7 @@ void parse_instruction(void)
 		{"push", &push}, {"pall", &pall},
 		{"nop", &nop}, {"pint", &pint},
 		{"pop", &pop}, {"swap", &swap},
+		{"add", &add},
 		{NULL, NULL}
 	};
 
