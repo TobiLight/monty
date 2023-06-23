@@ -23,7 +23,7 @@ void get_stream(char *file)
 		free_arguments();
 		exit(EXIT_FAILURE);
 	}
-	arguments->stream = file_descopen(file_desc, "r");
+	arguments->stream = fdopen(file_desc, "r");
 	if (arguments->stream == NULL)
 	{
 		close(file_desc);
