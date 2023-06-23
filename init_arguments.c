@@ -26,10 +26,10 @@ void init_arguments(void)
 		exit(EXIT_FAILURE);
 	}
 	arguments->stream = NULL;
-	arguments->line = NULL;
-	arguments->line_read = 0;
-	arguments->tokens_size = 0;
-	arguments->stack = 1;
-	arguments->stack_size = 0;
 	arguments->head = NULL;
+	arguments->line = NULL;
+	arguments->tokens_size = 0;
+	arguments->line_read = 0;
+	arguments->stack_size = 0;
+	arguments->stack = 1;
 }
