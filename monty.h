@@ -105,5 +105,6 @@ void mod(stack_t **, unsigned int);
 void mul(stack_t **, unsigned int);
 int is_comment(void);
 void pchar(stack_t **, unsigned int);
+void pstr(stack_t **, unsigned int);
 
 #endif /* MONTY_H */

@@ -7,6 +7,7 @@
 
 /**
  * is_comment - checks the tokens if it starts with #"
+ *
  * Return: 0 or 1
  */
 int is_comment(void)
@@ -94,4 +95,32 @@ void pchar(stack_t **stack, unsigned int line_number)
 	}
 
 	printf("%c\n", temp1->n);
+}
+
+/**
+ * pstr - prints the string starting at the top of the stack,
+ * followed by a new line
+ * @stack: Pointer to the stack.
+ * @line_number: Line number where the mul function is called.
+ *
+ * Return: nothing
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	(void)stack;
+	(void)line_number;
+
+	temp = arguments->head;
+
+	while (temp != NULL)
+	{
+		if (temp->n <= 0 || temp->n > 127)
+			break;
+		printf("%c", temp->n);
+		temp = temp->next;
+	}
+
+	printf("\n");
 }
