@@ -95,7 +95,7 @@ void pall(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
 void stack(stack_t **, unsigned int);
 void pint(stack_t **, unsigned int);
-void pop(stack_t **, unsigned int)
-void delete_stack_node(void)l
+void pop(stack_t **, unsigned int);
+void delete_stack_node(void);
 
 #endif /* MONTY_H */
