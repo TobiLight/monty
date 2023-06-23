@@ -1,8 +1,7 @@
 /*
  * File: free_args.c
  * Author: Oluwatobiloba Light
-*/
-
+ */
 
 #include "monty.h"
 
@@ -47,7 +46,7 @@ void free_tokens(void)
 		return;
 
 	i = 0;
-	while(arguments->tokens[i])
+	while (arguments->tokens[i])
 	{
 		free(arguments->tokens[i]);
 		i++;
