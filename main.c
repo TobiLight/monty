@@ -31,7 +31,6 @@ int main(int argc, char **argv)
 		run_instruction();
 		free_tokens();
 	}
-	free(linelen);
 	close_stream();
 	free_arguments();
 	return (0);
