@@ -46,7 +46,7 @@ void free_tokens(void)
 	if (arguments->tokens == NULL)
 		return;
 
-	for (i = 0; arguments->tokens[i] != NULL; i++)
+	for (i = 0; arguments->tokens[i]; i++)
 	{
 		free(arguments->tokens[i]);
 	}
