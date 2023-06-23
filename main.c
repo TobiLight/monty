@@ -4,7 +4,6 @@
  */
 
 #include "monty.h"
-arg_t *arguments = NULL;
 
 /**
  * main - Entry point monty program
@@ -19,6 +18,7 @@ int main(int argc, char **argv)
 {
 	size_t n = 0;
 	ssize_t linelen;
+	arg_t *arguments = NULL;
 
 	validate_args(argc);
 	init_arguments();

@@ -12,9 +12,7 @@
  */
 
 void push(stack_t **stack, unsigned int line_number)
-{
-	stack_t *temp;
-	
+{	
 	if (arguments->tokens_size <= 1 || !(is_int(arguments->tokens[1])))
 	{
 		free_arguments();
@@ -44,7 +42,7 @@ void push(stack_t **stack, unsigned int line_number)
 		}
 		else
 		{
-			temp = arguments->head;
+			stack_t *temp = arguments->head;
 			while (temp->next)
 				temp = temp->next;
 			temp->next = *stack;
