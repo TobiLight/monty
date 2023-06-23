@@ -17,12 +17,14 @@ void init_arguments(void)
 	if (arguments == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free_arguments();
 		exit(EXIT_FAILURE);
 	}
 	arguments->instruction = malloc(sizeof(instruction_t));
 	if (arguments->instruction == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free_arguments();
 		exit(EXIT_FAILURE);
 	}
 	arguments->stream = NULL;

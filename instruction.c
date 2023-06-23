@@ -26,7 +26,6 @@ void parse_instruction(void)
 		{"queue", &queue}, {NULL, NULL}
 	};
 
-
 	if (arguments->tokens_size <= 0)
 		return;
 	if (arguments->tokens[0][0] == '#')
