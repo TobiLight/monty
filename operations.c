@@ -44,7 +44,6 @@ void push(stack_t **stack, unsigned int line_number)
 		else
 		{
 			temp = arguments->head;
-			printf("passing by");
 			while (temp->next)
 				temp = temp->next;
 			temp->next = *stack;

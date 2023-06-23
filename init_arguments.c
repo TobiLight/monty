@@ -29,4 +29,7 @@ void init_arguments(void)
 	arguments->line = NULL;
 	arguments->line_read = 0;
 	arguments->tokens_size = 0;
+	arguments->stack = 1;
+	arguments->stack_size = 0;
+	arguments->head = NULL;
 }
