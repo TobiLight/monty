@@ -14,35 +14,21 @@
 
 void get_stream(char *file)
 {
-	int fd;
+	int file_desc;
 
-	fd = open(file, O_RDONLY);
-	if (fd == -1)
+	file_desc = open(file, O_RDONLY);
+	if (file_desc == -1)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
-		if (arguments == NULL)
-			return;
-		if (arguments->line)
-		{
-			free(arguments->line);
-			arguments->line = NULL;
-		}
-		free(arguments);
+		free_arguments();
 		exit(EXIT_FAILURE);
 	}
-	arguments->stream = fdopen(fd, "r");
+	arguments->stream = file_descopen(file_desc, "r");
 	if (arguments->stream == NULL)
 	{
-		close(fd);
+		close(file_desc);
 		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
-		if (arguments == NULL)
-			return;
-		if (arguments->line)
-		{
-			free(arguments->line);
-			arguments->line = NULL;
-		}
-		free(arguments);
+		free_arguments();
 		exit(EXIT_FAILURE);
 	}
 }

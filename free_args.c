@@ -68,17 +68,13 @@ void free_arguments(void)
 		free(arguments->instruction);
 		arguments->instruction = NULL;
 	}
-
 	if (arguments->head)
 		free_node_stack(arguments->head);
-
 	arguments->head = NULL;
-
 	if (arguments->line)
 	{
 		free(arguments->line);
 		arguments->line = NULL;
 	}
-
 	free(arguments);
 }
