@@ -101,5 +101,6 @@ void swap(stack_t **, unsigned int);
 void add(stack_t **, unsigned int);
 void sub(stack_t **, unsigned int);
 void monty_div(stack_t **, unsigned int);
+void mod(stack_t **, unsigned int);
 
 #endif /* MONTY_H */
