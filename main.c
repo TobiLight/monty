@@ -18,11 +18,12 @@ arg_t *arguments = NULL;
 int main(int argc, char **argv)
 {
 	size_t n = 0;
+	ssize_t linelen;
 
 	validate_args(argc);
 	init_arguments();
 	get_stream(argv[1]);
-	while (getline(&arguments->line, &n, arguments->stream) != -1)
+	while ((linelen = getline(&arguments->line, &n, arguments->stream)) != -1)
 	{
 		arguments->line_read += 1;
 		tokenizer();
@@ -30,7 +31,7 @@ int main(int argc, char **argv)
 		run_instruction();
 		free_tokens();
 	}
-
+	free(linelen);
 	close_stream();
 	free_arguments();
 	return (0);
