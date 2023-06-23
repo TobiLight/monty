@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 		free_tokens();
 	}
 
-	close_stream(;)
+	close_stream();
 	free_arguments();
 
 	return (0);
