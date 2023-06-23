@@ -44,8 +44,14 @@ void parse_instruction(void)
 			return;
 		}
 	}
+	stderrprintf(2, "L%d: unknown instruction %s\n",
+			arguments->line_read, arguments->tokens[0]);
 	/* close stream */
-	close_stream();
+	if (arguments->stream == NULL)
+		return;
+
+	fclose(arguments->stream);
+	arguments->stream = NULL;
 	free_tokens(); /* free tokens */
 	free_arguments();
 }
