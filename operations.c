@@ -13,6 +13,7 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp;
 	if (arguments->tokens_size <= 1 || !(is_int(arguments->tokens[1])))
 	{
 		free_arguments();
@@ -27,7 +28,8 @@ void push(stack_t **stack, unsigned int line_number)
 		free_arguments();
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next = (*stack)->prev = NULL;
+	(*stack)->prev = NULL;
+	(*stack)->next = (*stack)->prev;
 	(*stack)->n = (int)atoi(arguments->tokens[1]);
 	if (arguments->head == NULL)
 		arguments->head = *stack;
@@ -41,8 +43,8 @@ void push(stack_t **stack, unsigned int line_number)
 		}
 		else
 		{
-			stack_t *temp = arguments->head;
-
+			*temp = arguments->head;
+			printf("passing by");
 			while (temp->next)
 				temp = temp->next;
 			temp->next = *stack;
@@ -61,8 +63,12 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
+	if (arguments->head == NULL)
+		return;
+
 	(void)line_number;
-	temp = *stack;
+	(void)stack;
+	temp = arguments->head;
 	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
