@@ -65,7 +65,8 @@ void pall(stack_t **stack, unsigned int line_number)
 		return;
 
 	(void)line_number;
-	temp = *stack;
+	(void)stack;
+	temp = arguments->head;
 	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
