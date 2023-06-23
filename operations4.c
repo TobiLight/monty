@@ -40,14 +40,14 @@ void rotr(stack_t **stack, unsigned int line_number)
 
 /**
  * stack - sets the format of the data to a stack (LIFO)
- * @stack: Pointer to the stack.
+ * @staq: Pointer to the stack.
  * @line_number: Line number where the mul function is called.
  *
  * Return: nothing
  */
-void stack(stack_t **stack, unsigned int line_number)
+void stack(stack_t **staq, unsigned int line_number)
 {
-	(void)stack;
+	(void)staq;
 	(void)line_number;
 	arguments->stack = 1;
 }
