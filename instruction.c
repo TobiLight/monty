@@ -15,7 +15,17 @@ void parse_instruction(void)
 {
 	int i = 0;
 	instruction_t instruction[] = {
-		{"push", &push}, {"pall", &pall}, {"nop", &nop}, {"pint", &pint}, {"pop", &pop}, {"swap", &swap}, {"add", &add}, {"sub", &sub}, {"div", &_div}, {"mod", &mod}, {"mul", &mul}, {"pchar", &pchar}, {"pstr", &pstr}, {"rotl", &rotl}, {"rotr", &rotr}, {"stack", &_stack}, {"queue", &queue}, {NULL, NULL}};
+		{"push", &push}, {"pall", &pall},
+		{"nop", &nop}, {"pint", &pint},
+		{"pop", &pop}, {"swap", &swap},
+		{"add", &add}, {"sub", &sub},
+		{"div", &_div}, {"mod", &mod},
+		{"mul", &mul}, {"pchar", &pchar},
+		{"pstr", &pstr}, {"rotl", &rotl},
+		{"rotr", &rotr}, {"stack", &_stack},
+		{"queue", &queue}, {NULL, NULL}
+	};
+
 
 	if (arguments->tokens_size <= 0)
 		return;
