@@ -17,3 +17,16 @@ void stack(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 	arguments->stack = 1;
 }
+
+/**
+* delete_stack_node - delete node at the head/top
+* Return: void
+*/
+void delete_stack_node(void)
+{
+	stack_t *temp;
+
+	temp = arguments->head;
+	arguments->head = temp->next;
+	free(temp);
+}
