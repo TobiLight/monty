@@ -45,11 +45,7 @@ void parse_instruction(void)
 		}
 	}
 	/* close stream */
-	if (arguments->stream == NULL)
-		return;
-
-	fclose(arguments->stream);
-	arguments->stream = NULL;
+	close_stream();
 	free_tokens(); /* free tokens */
 	free_arguments();
 }
