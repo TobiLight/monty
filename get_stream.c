@@ -19,30 +19,16 @@ void get_stream(char *file)
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
-		if (arguments == NULL)
-			return;
-		if (arguments->line)
-		{
-			free(arguments->line);
-			arguments->line = NULL;
-		}
-		free(arguments);
+		dprintf(2, "Error: Can't open file %s\n", arguments->line);
+		free_arguments();
 		exit(EXIT_FAILURE);
 	}
 	arguments->stream = fdopen(fd, "r");
 	if (arguments->stream == NULL)
 	{
 		close(fd);
-		fprintf(stderr, "Error: Can't open file %s\n", arguments->line);
-		if (arguments == NULL)
-			return;
-		if (arguments->line)
-		{
-			free(arguments->line);
-			arguments->line = NULL;
-		}
-		free(arguments);
+		dprintf(2, "Error: Can't open file %s\n", arguments->line);
+		free_arguments();
 		exit(EXIT_FAILURE);
 	}
 }

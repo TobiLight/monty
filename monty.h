@@ -75,6 +75,7 @@ extern arg_t *arguments;
 
 FILE *fdopen(int fd, const char *mode);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+int dprintf(int fd, const char *format, ...);
 
 void validate_args(int);
 void init_arguments();
