@@ -106,5 +106,9 @@ void mul(stack_t **, unsigned int);
 int is_comment(void);
 void pchar(stack_t **, unsigned int);
 void pstr(stack_t **, unsigned int);
+void rotl(stack_t **, unsigned int);
+void rotr(stack_t **, unsigned int);
+void stack(stack_t **, unsigned int);
+void queue(stack_t **, unsigned int);
 
 #endif /* MONTY_H */

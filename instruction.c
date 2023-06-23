@@ -21,8 +21,9 @@ void parse_instruction(void)
 		{"add", &add}, {"sub", &sub},
 		{"div", &_div}, {"mod", &mod},
 		{"mul", &mul}, {"pchar", &pchar},
-		{"pstr", &pstr},
-		{NULL, NULL}
+		{"pstr", &pstr}, {"rotl", &rotl},
+		{"rotr", &rotr}, {"stack", &stack},
+		{"queue", &queue}, {NULL, NULL}
 	};
 
 
