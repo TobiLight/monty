@@ -60,12 +60,12 @@ void push(stack_t **stack, unsigned int line_number)
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-	(void)line_number;
-	(void)stack;
 
 	if (arguments->head == NULL)
 		return;
 
+	(void)line_number;
+	(void)stack;
 	temp = arguments->head;
 	while (temp != NULL)
 	{
