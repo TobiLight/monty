@@ -13,12 +13,10 @@
  *
  * Return: Always (0) Success
  */
-
 int main(int argc, char **argv)
 {
 	size_t n = 0;
 	ssize_t linelen;
-	arg_t *arguments = NULL;
 
 	validate_args(argc);
 	init_arguments();

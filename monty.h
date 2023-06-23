@@ -72,6 +72,7 @@ typedef struct arg_s
 
 /* Global variables and functions */
 extern arg_t *arguments;
+arg_t *arguments = NULL;
 
 FILE *fdopen(int fd, const char *mode);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
