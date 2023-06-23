@@ -31,11 +31,7 @@ int main(int argc, char **argv)
 		free_tokens();
 	}
 
-	if (arguments->stream == NULL)
-		return;
-
-	fclose(arguments->stream);
-	arguments->stream = NULL;
+	close_stream(;)
 	free_arguments();
 
 	return (0);
