@@ -15,17 +15,7 @@ void parse_instruction(void)
 {
 	int i = 0;
 	instruction_t instruction[] = {
-		{"push", &push}, {"pall", &pall},
-		{"nop", &nop}, {"pint", &pint},
-		{"pop", &pop}, {"swap", &swap},
-		{"add", &add}, {"sub", &sub},
-		{"div", &_div}, {"mod", &mod},
-		{"mul", &mul}, {"pchar", &pchar},
-		{"pstr", &pstr}, {"rotl", &rotl},
-		{"rotr", &rotr}, {"stack", &_stack},
-		{"queue", &queue}, {NULL, NULL}
-	};
-
+		{"push", &push}, {"pall", &pall}, {"nop", &nop}, {"pint", &pint}, {"pop", &pop}, {"swap", &swap}, {"add", &add}, {"sub", &sub}, {"div", &_div}, {"mod", &mod}, {"mul", &mul}, {"pchar", &pchar}, {"pstr", &pstr}, {"rotl", &rotl}, {"rotr", &rotr}, {"stack", &_stack}, {"queue", &queue}, {NULL, NULL}};
 
 	if (arguments->tokens_size <= 0)
 		return;
@@ -44,14 +34,9 @@ void parse_instruction(void)
 			return;
 		}
 	}
-	stderrprintf(2, "L%d: unknown instruction %s\n",
+	fprintf(stderr, "L%d: unknown instruction %s\n",
 			arguments->line_read, arguments->tokens[0]);
-	/* close stream */
-	if (arguments->stream == NULL)
-		return;
-
-	fclose(arguments->stream);
-	arguments->stream = NULL;
+	close_stream();
 	free_tokens(); /* free tokens */
 	free_arguments();
 }
