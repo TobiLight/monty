@@ -12,7 +12,7 @@
  */
 
 void push(stack_t **stack, unsigned int line_number)
-{	
+{
 	if (arguments->tokens_size <= 1 || !(is_int(arguments->tokens[1])))
 	{
 		free_arguments();
