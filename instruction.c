@@ -48,6 +48,7 @@ void parse_instruction(void)
 	close_stream();
 	free_tokens(); /* free tokens */
 	free_arguments();
+	exit(EXIT_FAILURE);
 }
 
 /**

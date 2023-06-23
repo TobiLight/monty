@@ -21,6 +21,7 @@ void tokenizer(void)
 	if (line_cpy == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free_arguments();
 		exit(EXIT_FAILURE);
 	}
 	strcpy(line_cpy, arguments->line);
@@ -40,6 +41,7 @@ void tokenizer(void)
 		if (arguments->tokens[n] == NULL)
 		{
 			fprintf(stderr, "Error: malloc failed\n");
+			free_arguments();
 			exit(EXIT_FAILURE);
 		}
 		strcpy(arguments->tokens[n], token);

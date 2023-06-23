@@ -24,15 +24,15 @@ void close_stream(void)
  */
 void free_node_stack(stack_t *head)
 {
-	if (head == NULL)
-		return;
+	stack_t *temp = head;
 
-	if (head->next != NULL)
+	while (temp)
 	{
-		free_node_stack(head->next);
+		temp = temp->next;
+		free(head);
+		head = temp;
+		arguments->stack_size -= 1;
 	}
-
-	free(head);
 }
 
 /**
@@ -63,7 +63,6 @@ void free_arguments(void)
 {
 	if (arguments == NULL)
 		return;
-
 	if (arguments->instruction)
 	{
 		free(arguments->instruction);
@@ -72,10 +71,13 @@ void free_arguments(void)
 	if (arguments->head)
 		free_node_stack(arguments->head);
 	arguments->head = NULL;
+	
 	if (arguments->line)
 	{
 		free(arguments->line);
 		arguments->line = NULL;
 	}
+	arguments->line_read = 0;
+	arguments->stack_size = 0;
 	free(arguments);
 }
