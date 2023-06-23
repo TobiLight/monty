@@ -94,7 +94,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	printf("%c\n", temp1->n);
+	printf("%c\n", temp->n);
 }
 
 /**
