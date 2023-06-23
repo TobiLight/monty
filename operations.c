@@ -87,7 +87,6 @@ void nop(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 }
 
-
 /**
  * pint - Prints the value at the top of the stack.
  * @stack: Pointer to the stack.
@@ -95,12 +94,18 @@ void nop(stack_t **stack, unsigned int line_number)
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
-	(void) stack;
+	(void)stack;
 
 	if (arguments->head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		free_all_args();
+		if (arguments->stream == NULL)
+			return;
+
+		fclose(arguments->stream);
+		arguments->stream = NULL;
+		free_tokens();
+		free_arguments();
 		exit(EXIT_FAILURE);
 	}
 
