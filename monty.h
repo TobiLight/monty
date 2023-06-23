@@ -84,7 +84,6 @@ void parse_instruction();
 void run_instruction();
 void free_node_stack(stack_t *);
 
-
 /* Helper functions */
 void free_arguments();
 void free_tokens();
@@ -95,6 +94,6 @@ void push(stack_t **, unsigned int);
 void pall(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
 void stack(stack_t **, unsigned int);
-
+void pint(stack_t **, unsigned int);
 
 #endif /* MONTY_H */
