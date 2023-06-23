@@ -163,7 +163,7 @@ void _div(stack_t **stack, unsigned int line_number)
  *       element of the stack by the top element of the stack
  * @stack: Pointer to the stack.
  * @line_number: Line number where the mul function is called.
- * 
+ *
  * Return: nothing
  */
 void mod(stack_t **stack, unsigned int line_number)

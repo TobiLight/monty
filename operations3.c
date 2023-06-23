@@ -125,20 +125,19 @@ void pstr(stack_t **stack, unsigned int line_number)
 	printf("\n");
 }
 
-
 /**
  * rotl - rotates the stack to the top
  * @stack: Pointer to the stack.
  * @line_number: Line number where the mul function is called.
- * 
+ *
  * Return: nothing
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp1, *temp2;
 
-	(void) stack;
-	(void) line_number;
+	(void)stack;
+	(void)line_number;
 	if (arguments->stack_size < 2)
 		return;
 
