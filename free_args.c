@@ -71,7 +71,6 @@ void free_arguments(void)
 	if (arguments->head)
 		free_node_stack(arguments->head);
 	arguments->head = NULL;
-	
 	if (arguments->line)
 	{
 		free(arguments->line);
